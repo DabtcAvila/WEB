@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- 
+    EXPLICACIÓN LÍNEA POR LÍNEA:
+    
+    <!DOCTYPE html> 
+    Le dice al navegador que este es un documento HTML5 moderno.
+    Sin esto, el navegador podría interpretarlo como HTML antiguo.
+-->
+
+<html lang="es">
+<!-- 
+    <html> es el contenedor raíz de TODO el documento
+    lang="es" le dice al navegador que el contenido está en español
+    (ayuda con lectores de pantalla y traducción automática)
+-->
+
+<head>
+    <!-- 
+        <head> contiene información INVISIBLE para el usuario
+        pero IMPORTANTE para el navegador
+    -->
+    
+    <meta charset="UTF-8">
+    <!-- Define que usamos caracteres UTF-8 (permite ñ, acentos, emojis) -->
+    
+    <title>David Ávila - Mi Primera Página Web</title>
+    <!-- Este texto aparece en la pestaña del navegador -->
+</head>
+
+<body>
+    <!-- 
+        <body> contiene TODO lo que el usuario SÍ puede ver
+    -->
+    
+    <h1>Bienvenido a mi primera página web</h1>
+    <!-- h1 = Encabezado más importante (solo debe haber UNO por página) -->
+    
+    <h2>Información Personal</h2>
+    <!-- h2 = Segundo nivel de importancia -->
+    
+    <p>
+        Mi nombre es David Fernando Ávila Díaz, estudiante de Ciencia de Datos
+        en el Instituto Tecnológico Autónomo de México (ITAM).
+    </p>
+    <!-- p = párrafo, agrupa texto relacionado -->
+    
+    <h2>Sobre este proyecto</h2>
+    
+    <p>
+        Esta página es parte de mi aprendizaje en el curso COM-11117 
+        Introducción al Desarrollo Web. 
+        <br>
+        <strong>Mi filosofía:</strong> entender cada línea de código antes de escribirla.
+    </p>
+    
+    <h3>Conceptos que estoy aprendiendo:</h3>
+    <!-- h3 = Tercer nivel de importancia -->
+    
+    <ul>
+        <!-- ul = unordered list (lista con viñetas) -->
+        <li>Estructura HTML básica</li>
+        <li>Etiquetas semánticas</li>
+        <li>Jerarquía de contenido</li>
+    </ul>
+    
+    <h3>Mis datos:</h3>
+    
+    <p>
+        <strong>Nombre:</strong> David Fernando Ávila Díaz
+        <!-- strong = texto importante (aparece en negritas) -->
+        <br>
+        <!-- br = salto de línea (break) -->
+        <strong>Clave única:</strong> 197851
+        <br>
+        <strong>Semestre:</strong> Otoño 2025
+    </p>
+    
+    <h2>Enlaces importantes</h2>
+    
+    <p>
+        Puedes encontrar más información sobre desarrollo web en:
+    </p>
+    
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/es/">MDN Web Docs</a>
+            <!-- a = anchor (enlace), href = hypertext reference (dirección) -->
+        </li>
+        <li>
+            <a href="https://www.w3schools.com/">W3Schools</a>
+        </li>
+    </ul>
+    
+    <hr>
+    <!-- hr = horizontal rule (línea horizontal divisoria) -->
+    
+    <p>
+        <em>Página creada el 15 de agosto de 2025</em>
+        <!-- em = emphasis (énfasis, aparece en cursiva) -->
+    </p>
+</body>
+
+</html>
