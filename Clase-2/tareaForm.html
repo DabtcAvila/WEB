@@ -11,24 +11,285 @@
     <p><strong>Materia:</strong> COM-11117 Introducción al Desarrollo Web</p>
     <hr>
     
-    <form action="http://estadistica.itam.mx/es/node/24399/" method="GET">
-        <!-- Campo oculto con el ID del buscador -->
-        <input type="hidden" name="cx" value="008531325323280182498:tdl0-ckuqas">
-        
-        <!-- Campo de búsqueda con el name="#" tal cual -->
-        <label for="busqueda">¿Qué estás buscando?</label><br>
-        <input type="text" id="busqueda" name="#" placeholder="Escribe tu búsqueda..." required>
-        
-        <input type="submit" value="Buscar">
-    </form>
+    <!-- 
+    ==========================================
+    FORMULARIO: CONCEPTO FUNDAMENTAL
+    ==========================================
+    Un formulario es una sección de HTML que recolecta datos del usuario
+    y los envía a un servidor para procesarlos.
     
-    <hr>
-    <footer>
-        <small>
+    Sintaxis básica: <form action="URL" method="MÉTODO">
+    -->
+    
+    <!-- 
+    ACTION: Define A DÓNDE se envían los datos
+    - Es la URL del programa/script que procesará los datos
+    - En este caso: http://estadistica.itam.mx/es/node/24399/
+    - Es como escribir la dirección en un sobre antes de enviar una carta
+    - Si no pones action, se envía a la misma página actual
+    
+    METHOD="GET": Define CÓMO se envían los datos
+    - GET = Los datos se añaden a la URL (visible para todos)
+    - Se usa para: búsquedas, filtros, datos no sensibles
+    - Resultado: URL?parametro1=valor1&parametro2=valor2
+    - Límite: ~2000 caracteres máximo
+    - Se puede guardar en marcadores/favoritos
+    - El historial del navegador guarda las búsquedas
+    -->
+    <form action="http://estadistica.itam.mx/es/node/24399/" method="GET">
+        
+        <!-- 
+        ==========================================
+        FIELDSET: AGRUPADOR DE CAMPOS DE FORMULARIO
+        ==========================================
+        
+        ¿QUÉ ES FIELDSET?
+        - Es un contenedor que agrupa elementos relacionados en un formulario
+        - Dibuja un borde alrededor de los campos (por defecto)
+        - Mejora la organización visual y semántica
+        - Muy útil para formularios largos con múltiples secciones
+        
+        ¿POR QUÉ USAR FIELDSET?
+        1. ORGANIZACIÓN: Agrupa campos relacionados visualmente
+        2. ACCESIBILIDAD: Los lectores de pantalla entienden que estos campos están relacionados
+        3. ESTILO: Crea un borde visual que separa secciones
+        4. SEMÁNTICA: Le dice al HTML que estos elementos van juntos
+        
+        EJEMPLO DE USO MÚLTIPLE:
+        <form>
+            <fieldset>
+                <legend>Información Personal</legend>
+                [campos de nombre, email, teléfono]
+            </fieldset>
+            <fieldset>
+                <legend>Dirección</legend>
+                [campos de calle, ciudad, código postal]
+            </fieldset>
+        </form>
+        
+        COMPORTAMIENTO ESPECIAL:
+        - Se puede deshabilitar todo el fieldset: <fieldset disabled>
+        - Esto deshabilitaría TODOS los campos dentro de una vez
+        - Útil para secciones condicionales del formulario
+        -->
+        <fieldset>
+            
+            <!-- 
+            ==========================================
+            LEGEND: TÍTULO DEL FIELDSET
+            ==========================================
+            
+            ¿QUÉ ES LEGEND?
+            - Es el título/etiqueta del fieldset
+            - DEBE ser el PRIMER elemento dentro del fieldset
+            - Se muestra "sobre" el borde del fieldset
+            - Solo puede haber UN legend por fieldset
+            
+            CARACTERÍSTICAS VISUALES:
+            - Por defecto, aparece en la parte superior izquierda
+            - "Rompe" el borde del fieldset (se ve sobre la línea)
+            - Se puede estilizar con CSS pero mantiene comportamiento especial
+            
+            IMPORTANCIA PARA ACCESIBILIDAD:
+            - Los lectores de pantalla anuncian el legend antes de cada campo
+            - Ejemplo: "Búsqueda en Estadística, campo de texto, ¿Qué estás buscando?"
+            - Ayuda a usuarios con discapacidad visual a entender el contexto
+            
+            CUÁNDO USAR LEGEND:
+            - Siempre que uses fieldset
+            - Debe describir brevemente el grupo de campos
+            - Como título de sección en formularios largos
+            -->
+            <legend>Búsqueda en Estadística</legend>
+            
+            <!-- 
+            ==========================================
+            INPUT TYPE="HIDDEN": CAMPO OCULTO
+            ==========================================
+            - Es un campo que el usuario NO puede ver ni modificar
+            - PERO sí se envía con el formulario
+            - Útil para enviar datos que el servidor necesita pero el usuario no
+            
+            NAME="cx": El nombre de la variable que recibirá el servidor
+            - El servidor del ITAM espera recibir una variable llamada "cx"
+            - Probablemente significa "Custom search ID" o "Context"
+            
+            VALUE="008531325323280182498:tdl0-ckuqas": El valor que se envía
+            - Este es un ID único que identifica el buscador de Estadística
+            - Le dice al servidor: "busca solo en la sección de Estadística"
+            - Sin esto, podría buscar en todo el ITAM o dar error
+            - Es como un "código postal" que delimita el área de búsqueda
+            
+            ¿Por qué hidden?
+            - El usuario no necesita ver este código
+            - El usuario no debe poder cambiarlo
+            - Pero el servidor lo necesita para funcionar
+            
+            NOTA SOBRE FIELDSET:
+            - Los campos hidden SÍ están dentro del fieldset
+            - Aunque no se ven, semánticamente pertenecen al grupo
+            -->
+            <input type="hidden" name="cx" value="008531325323280182498:tdl0-ckuqas">
+            
+            <!-- 
+            ==========================================
+            INPUT TYPE="TEXT": CAMPO DE TEXTO VISIBLE
+            ==========================================
+            Este es el campo donde el usuario escribe su búsqueda
+            -->
+            
+            <!-- LABEL: Etiqueta asociada al campo
+            - Mejora la accesibilidad (lectores de pantalla)
+            - Al hacer click en el label, se enfoca el input
+            - El "for" debe coincidir con el "id" del input
+            
+            RELACIÓN CON FIELDSET:
+            - El label está DENTRO del fieldset
+            - Visualmente aparece dentro del borde
+            - El legend describe el grupo, el label describe el campo específico
+            -->
+            <label for="busqueda">¿Qué estás buscando?</label><br>
+            
+            <!-- 
+            TYPE="text": Define que es un campo de texto simple
+            - El usuario puede escribir cualquier cosa
+            - No tiene validación especial (a diferencia de type="email" o "number")
+            
+            ID="busqueda": Identificador único en la página
+            - Se usa para conectar con el <label>
+            - Se puede usar en CSS para dar estilo
+            - Se puede usar en JavaScript para manipular
+            - NO se envía al servidor
+            
+            NAME="#": ¡ESTO ES LO INUSUAL!
+            - Name es el nombre de la variable que recibe el servidor
+            - Normalmente sería algo como name="q" o name="search"
+            - El ITAM usa "#" como nombre (muy raro pero funcional)
+            - Cuando se envía, el # se codifica como %23 en la URL
+            - URL resultante: ?%23=lo-que-buscaste
+            - El servidor del ITAM está programado para leer la variable "#"
+            
+            PLACEHOLDER: Texto de ayuda
+            - Aparece cuando el campo está vacío
+            - Desaparece cuando el usuario empieza a escribir
+            - NO se envía con el formulario
+            - Es solo una ayuda visual
+            
+            REQUIRED: Validación HTML5
+            - El navegador NO permite enviar el form si está vacío
+            - Muestra mensaje: "Please fill out this field"
+            - Es validación del lado del cliente (frontend)
+            - NO reemplaza la validación del servidor
+            -->
+            <input type="text" 
+                   id="busqueda" 
+                   name="#" 
+                   placeholder="Escribe tu búsqueda..." 
+                   required>
+            
+            <!-- Espacio visual entre input y botón -->
+            <br><br>
+            
+            <!-- 
+            ==========================================
+            INPUT TYPE="SUBMIT": BOTÓN DE ENVÍO
+            ==========================================
+            
+            TYPE="submit": Define que este botón envía el formulario
+            - Cuando se hace click, el navegador:
+              1. Recolecta todos los campos con "name" del formulario
+              2. Valida los campos (required, pattern, etc.)
+              3. Construye la petición según el method (GET/POST)
+              4. Envía los datos al "action"
+              5. Navega a la URL resultante
+            
+            VALUE="Buscar": El texto que se muestra en el botón
+            - Es lo que ve el usuario
+            - Se puede cambiar sin afectar la funcionalidad
+            
+            UBICACIÓN EN FIELDSET:
+            - El botón submit PUEDE estar dentro o fuera del fieldset
+            - Si está dentro: visualmente está agrupado con los campos
+            - Si está fuera: aparece separado del grupo
+            - Funcionalmente es lo mismo, es decisión de diseño
+            
+            Alternativa moderna: <button type="submit">Buscar</button>
+            - Hace lo mismo pero permite más contenido (iconos, HTML)
+            -->
+            <input type="submit" value="Buscar">
+            
+        </fieldset>
+        <!-- Fin del fieldset: todos los campos relacionados con la búsqueda están agrupados -->
+        
+    </form>
+    <!-- 
+    ==========================================
+    ¿QUÉ PASA CUANDO EL USUARIO DA CLICK EN "BUSCAR"?
+    ==========================================
+    
+    1. RECOLECCIÓN: El navegador encuentra todos los inputs con "name":
+       - name="cx" con value="008531325323280182498:tdl0-ckuqas"
+       - name="#" con value="[lo que escribió el usuario]"
+    
+    2. CONSTRUCCIÓN DE URL (porque es method="GET"):
+       URL base: http://estadistica.itam.mx/es/node/24399/
+       + ? (indica inicio de parámetros)
+       + %23=probabilidad (el # se codifica como %23)
+       + & (separador de parámetros)
+       + cx=008531325323280182498:tdl0-ckuqas
+       
+       URL final: http://estadistica.itam.mx/es/node/24399/?%23=probabilidad&cx=008531325323280182498:tdl0-ckuqas
+    
+    3. NAVEGACIÓN: El navegador va a esa URL
+    
+    4. PROCESAMIENTO: El servidor del ITAM:
+       - Lee el parámetro "cx" → identifica que es búsqueda de Estadística
+       - Lee el parámetro "#" → obtiene el término de búsqueda
+       - Ejecuta la búsqueda en su base de datos
+       - Devuelve una página HTML con los resultados
+    
+    ==========================================
+    CODIFICACIÓN URL (URL Encoding)
+    ==========================================
+    
+    Caracteres especiales y su codificación:
+    - # → %23 (el que usamos)
+    - espacio → %20 o +
+    - á → %C3%A1
+    - é → %C3%A9
+    - ñ → %C3%B1
+    - & → %26 (separa parámetros, por eso se codifica)
+    - = → %3D (asigna valores, por eso se codifica)
+    
+    ¿Por qué se codifica?
+    - Algunos caracteres tienen significado especial en URLs
+    - La codificación evita confusiones
+    - Permite enviar cualquier carácter de forma segura
+    -->
+    
+    <p>
+    
             Tarea: Formulario HTML básico<br>
             Este formulario envía búsquedas al Departamento de Estadística del ITAM<br>
-            Usa GET con un parámetro name="#" (inusual pero funcional)
-        </small>
-    </footer>
+            Demuestra comprensión de: action, method GET, inputs hidden/text/submit, name, codificación URL<br>
+            <br>
+            <!-- Nota sobre el aprendizaje -->
+            Conceptos aprendidos hoy:<br>
+            1. Los formularios pueden interactuar con cualquier sitio web<br>
+            2. El atributo "name" es crucial - el servidor espera nombres específicos<br>
+            3. Los campos hidden envían datos sin mostrarlos al usuario<br>
+            4. La codificación URL transforma caracteres especiales<br>
+            5. GET pone los datos en la URL, POST los envía en el cuerpo<br>
+    
+    </p>
+    
+    <hr>
+    <!-- hr = horizontal rule (línea horizontal divisoria) -->
+    
+    <p>
+        <em>Página creada el 22 de agosto de 2025</em>
+        <!-- em = emphasis (énfasis, aparece en cursiva) -->
+    </p>
+    
 </body>
 </html>
