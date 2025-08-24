@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación HTML - David Fernando Avila Díaz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        .ejemplo {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .codigo {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .elemento-linea {
+            background-color: #e8f8f5;
+            padding: 3px 8px;
+            margin: 2px;
+            display: inline-block;
+            border: 1px solid #16a085;
+        }
+        .elemento-bloque {
+            background-color: #fef5e7;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #f39c12;
+        }
+        form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        input, select, textarea {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+        }
+        input[type="submit"], input[type="button"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            width: auto;
+            padding: 10px 20px;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #2980b9;
+        }
+        .nota {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Investigación sobre HTML: Semántica y Formularios</h1>
+        <p><strong>Alumno:</strong> David Fernando Avila Díaz | <strong>Clave Única:</strong> 197851</p>
+        <p><strong>Materia:</strong> COM-11117 Introducción al Desarrollo Web | <strong>ITAM</strong></p>
+    </header>
+
+    <section>
+        <h2>Parte 1: Diferencias Semánticas entre Etiquetas</h2>
+        
+        <h3>1. &lt;b&gt; vs. &lt;strong&gt;</h3>
+        
+        <div class="ejemplo">
+            <p><b>Texto con &lt;b&gt;</b> - Solo negrita visual</p>
+            <p><strong>Texto con &lt;strong&gt;</strong> - Negrita con importancia semántica</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>&lt;b&gt;</th>
+                <th>&lt;strong&gt;</th>
+            </tr>
+            <tr>
+                <td>Propósito</td>
+                <td>Formato visual (negrita)</td>
+                <td>Importancia semántica</td>
+            </tr>
+            <tr>
+                <td>Significado</td>
+                <td>Sin significado especial</td>
+                <td>Contenido de gran importancia</td>
+            </tr>
+            <tr>
+                <td>Lectores de pantalla</td>
+                <td>No enfatizan</td>
+                <td>Enfatizan al leer</td>
+            </tr>
+            <tr>
+                <td>SEO</td>
+                <td>Sin impacto directo</td>
+                <td>Google considera el contenido más relevante</td>
+            </tr>
+            <tr>
+                <td>Uso recomendado</td>
+                <td>Palabras clave en resúmenes, nombres de productos sin importancia especial</td>
+                <td>Advertencias, palabras cruciales, términos importantes</td>
+            </tr>
+        </table>
+
+        <h3>2. &lt;i&gt; vs. &lt;em&gt;</h3>
+        
+        <div class="ejemplo">
+            <p><i>Texto con &lt;i&gt;</i> - Solo cursiva visual</p>
+            <p><em>Texto con &lt;em&gt;</em> - Cursiva con énfasis semántico</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>&lt;i&gt;</th>
+                <th>&lt;em&gt;</th>
+            </tr>
+            <tr>
+                <td>Propósito</td>
+                <td>Formato visual (cursiva)</td>
+                <td>Énfasis semántico</td>
+            </tr>
+            <tr>
+                <td>Significado</td>
+                <td>Texto en otro tono o modo</td>
+                <td>Énfasis en el significado</td>
+            </tr>
+            <tr>
+                <td>Lectores de pantalla</td>
+                <td>Lectura normal</td>
+                <td>Cambio de entonación</td>
+            </tr>
+            <tr>
+                <td>SEO</td>
+                <td>Sin impacto</td>
+                <td>Puede indicar relevancia contextual</td>
+            </tr>
+            <tr>
+                <td>Uso recomendado</td>
+                <td>Términos técnicos, palabras en otro idioma, pensamientos</td>
+                <td>Palabras que cambian el significado de la oración</td>
+            </tr>
+        </table>
+
+        <h3>3. &lt;s&gt; vs. &lt;del&gt;</h3>
+        
+        <div class="ejemplo">
+            <p><s>Texto con &lt;s&gt;</s> - Tachado sin significado de eliminación</p>
+            <p><del>Texto con &lt;del&gt;</del> - Contenido eliminado del documento</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>&lt;s&gt;</th>
+                <th>&lt;del&gt;</th>
+            </tr>
+            <tr>
+                <td>Propósito</td>
+                <td>Contenido ya no relevante/correcto</td>
+                <td>Contenido eliminado en una edición</td>
+            </tr>
+            <tr>
+                <td>Significado</td>
+                <td>Ya no es preciso pero se mantiene visible</td>
+                <td>Fue eliminado del documento</td>
+            </tr>
+            <tr>
+                <td>Lectores de pantalla</td>
+                <td>Pueden ignorarlo</td>
+                <td>Anuncian como "eliminado"</td>
+            </tr>
+            <tr>
+                <td>SEO</td>
+                <td>Contenido menos relevante</td>
+                <td>Google entiende que fue removido</td>
+            </tr>
+            <tr>
+                <td>Uso recomendado</td>
+                <td>Precios antiguos, información desactualizada</td>
+                <td>Control de cambios, correcciones documentadas</td>
+            </tr>
+        </table>
+
+        <div class="nota">
+            <strong>Nota importante:</strong> La diferencia clave está en el significado semántico. Las etiquetas semánticas (strong, em, del) comunican significado tanto a humanos como a máquinas (motores de búsqueda, lectores de pantalla), mientras que las etiquetas de presentación (b, i, s) solo afectan la apariencia visual.
+        </div>
+    </section>
+
+    <section>
+        <h2>Parte 2: Elementos de Línea vs. Elementos de Bloque</h2>
+        
+        <h3>¿Qué son los elementos de línea (inline)?</h3>
+        <p>Los elementos de línea son aquellos que no interrumpen el flujo del contenido. Se colocan uno al lado del otro en la misma línea y solo ocupan el espacio necesario para su contenido. No aceptan propiedades de ancho (width) o alto (height).</p>
+        
+        <h4>Ejemplos de elementos de línea:</h4>
+        <div class="ejemplo">
+            <span class="elemento-linea">&lt;span&gt; - Contenedor genérico en línea</span>
+            <a href="#" class="elemento-linea">&lt;a&gt; - Enlaces</a>
+            <strong class="elemento-linea">&lt;strong&gt; - Texto importante</strong>
+            <em class="elemento-linea">&lt;em&gt; - Énfasis</em>
+            <img src="data:image/svg+xml,%3Csvg width='50' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='50' height='20' fill='%2316a085'/%3E%3C/svg%3E" alt="ejemplo" style="height: 20px;"> &lt;img&gt; - Imágenes
+            <code class="elemento-linea">&lt;code&gt; - Código</code>
+            <label class="elemento-linea">&lt;label&gt; - Etiquetas de formulario</label>
+        </div>
+
+        <h3>¿Qué son los elementos de bloque?</h3>
+        <p>Los elementos de bloque siempre comienzan en una nueva línea y ocupan todo el ancho disponible de su contenedor. Pueden contener otros elementos de bloque y elementos de línea. Aceptan propiedades de ancho y alto.</p>
+        
+        <h4>Ejemplos de elementos de bloque:</h4>
+        <div class="elemento-bloque">&lt;div&gt; - Contenedor genérico de bloque</div>
+        <p class="elemento-bloque">&lt;p&gt; - Párrafos de texto</p>
+        <h1 style="font-size: 18px;" class="elemento-bloque">&lt;h1&gt; a &lt;h6&gt; - Encabezados</h1>
+        <section class="elemento-bloque">&lt;section&gt; - Sección de contenido</section>
+        <article class="elemento-bloque">&lt;article&gt; - Contenido independiente</article>
+        <ul class="elemento-bloque">
+            <li>&lt;ul&gt; y &lt;ol&gt; - Listas</li>
+        </ul>
+        <form class="elemento-bloque">&lt;form&gt; - Formularios</form>
+
+        <div class="nota">
+            <strong>Diferencia clave:</strong> Los elementos de bloque crean "cajas" que se apilan verticalmente, mientras que los elementos de línea fluyen horizontalmente dentro del texto.
+        </div>
+    </section>
+
+    <section>
+        <h2>Parte 3: Formularios y sus Elementos</h2>
+        
+        <h3>Elementos de Formulario y sus Propiedades</h3>
+        
+        <form action="#" method="post">
+            <fieldset>
+                <legend><strong>Ejemplos de Elementos de Formulario</strong></legend>
+                
+                <h4>1. &lt;input&gt; - Campo de entrada versátil</h4>
+                <p>El elemento input es el más versátil, con múltiples tipos según la propiedad "type":</p>
+                
+                <label for="texto">Type="text" - Texto simple:
+                    <input type="text" id="texto" name="texto" placeholder="Escribe tu nombre" required>
+                </label>
+                
+                <label for="email">Type="email" - Correo electrónico:
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                </label>
+                
+                <label for="password">Type="password" - Contraseña:
+                    <input type="password" id="password" name="password" placeholder="Contraseña segura">
+                </label>
+                
+                <label for="numero">Type="number" - Números:
+                    <input type="number" id="numero" name="numero" min="1" max="100" step="1" value="25">
+                </label>
+                
+                <label for="fecha">Type="date" - Selector de fecha:
+                    <input type="date" id="fecha" name="fecha" min="2024-01-01" max="2025-12-31">
+                </label>
+                
+                <label for="color">Type="color" - Selector de color:
+                    <input type="color" id="color" name="color" value="#3498db">
+                </label>
+                
+                <label for="rango">Type="range" - Control deslizante:
+                    <input type="range" id="rango" name="rango" min="0" max="100" value="50">
+                </label>
+                
+                <div style="margin: 15px 0;">
+                    <p><strong>Type="checkbox" - Casillas de verificación:</strong></p>
+                    <label>
+                        <input type="checkbox" name="opciones" value="opcion1" checked> Opción 1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="opciones" value="opcion2"> Opción 2
+                    </label>
+                </div>
+                
+                <div style="margin: 15px 0;">
+                    <p><strong>Type="radio" - Botones de radio:</strong></p>
+                    <label>
+                        <input type="radio" name="genero" value="masculino"> Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="femenino"> Femenino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="otro" checked> Otro
+                    </label>
+                </div>
+                
+                <label for="archivo">Type="file" - Selector de archivos:
+                    <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+                </label>
+                
+                <h4>2. &lt;label&gt; - Etiqueta para campos</h4>
+                <p>El elemento label asocia texto descriptivo con un control de formulario. Propiedades principales:</p>
+                <ul>
+                    <li><strong>for:</strong> ID del elemento al que está asociado</li>
+                    <li>Mejora la accesibilidad y usabilidad</li>
+                    <li>Al hacer clic en el label, se activa el campo asociado</li>
+                </ul>
+                
+                <h4>3. &lt;textarea&gt; - Área de texto multilínea</h4>
+                <label for="comentarios">Comentarios (textarea con rows y cols):
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..." maxlength="500"></textarea>
+                </label>
+                
+                <h4>4. &lt;select&gt; y &lt;option&gt; - Lista desplegable</h4>
+                <label for="pais">País de origen:
+                    <select id="pais" name="pais" required>
+                        <option value="">-- Selecciona un país --</option>
+                        <option value="mx" selected>México</option>
+                        <option value="us">Estados Unidos</option>
+                        <option value="ca">Canadá</option>
+                        <option value="es">España</option>
+                        <option value="ar">Argentina</option>
+                    </select>
+                </label>
+                
+                <label for="lenguajes">Lenguajes de programación (múltiple selección):
+                    <select id="lenguajes" name="lenguajes" multiple size="5">
+                        <option value="js">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="ruby">Ruby</option>
+                    </select>
+                </label>
+                
+                <h4>5. &lt;progress&gt; - Barra de progreso</h4>
+                <label for="progreso">Progreso del curso:
+                    <progress id="progreso" value="32" max="100">32%</progress> 32%
+                </label>
+                
+                <h4>6. &lt;output&gt; - Resultado de cálculo</h4>
+                <div style="margin: 15px 0;">
+                    <label for="a">Número A: <input type="number" id="a" name="a" value="5"></label>
+                    <label for="b">Número B: <input type="number" id="b" name="b" value="3"></label>
+                    <p>Resultado (A + B): <output name="resultado" for="a b">8</output></p>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <input type="submit" value="Enviar Formulario">
+                    <input type="reset" value="Limpiar">
+                    <input type="button" value="Botón Simple" onclick="alert('¡Botón clickeado!')">
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="nota">
+            <h4>Propiedades comunes de los elementos de formulario:</h4>
+            <ul>
+                <li><strong>name:</strong> Nombre del campo para envío de datos</li>
+                <li><strong>id:</strong> Identificador único</li>
+                <li><strong>value:</strong> Valor del campo</li>
+                <li><strong>placeholder:</strong> Texto de ayuda</li>
+                <li><strong>required:</strong> Campo obligatorio</li>
+                <li><strong>disabled:</strong> Campo deshabilitado</li>
+                <li><strong>readonly:</strong> Solo lectura</li>
+                <li><strong>maxlength:</strong> Longitud máxima</li>
+                <li><strong>pattern:</strong> Patrón de validación (regex)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusiones</h2>
+        <p>Esta investigación demuestra la importancia de elegir las etiquetas HTML correctas no solo por su apariencia visual, sino por su significado semántico. Esto impacta en:</p>
+        <ul>
+            <li><strong>Accesibilidad:</strong> Los lectores de pantalla interpretan correctamente el contenido</li>
+            <li><strong>SEO:</strong> Los motores de búsqueda entienden mejor la estructura y relevancia del contenido</li>
+            <li><strong>Mantenibilidad:</strong> El código es más claro y autodocumentado</li>
+            <li><strong>Estándares web:</strong> Cumplimiento con las mejores prácticas de desarrollo</li>
+        </ul>
+        
+        <p>Los formularios HTML5 ofrecen una gran variedad de elementos y tipos de input que permiten crear interfaces de usuario ricas y accesibles sin necesidad de JavaScript adicional para validaciones básicas.</p>
+    </section>
+
+    <footer>
+        <p>Investigación realizada por David Fernando Avila Díaz - 197851</p>
+        <p>ITAM - COM-11117 Introducción al Desarrollo Web - Otoño 2025</p>
+    </footer>
+</body>
+</html>
